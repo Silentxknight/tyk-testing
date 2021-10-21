@@ -1,0 +1,27 @@
+{
+  "name": "tyk-api",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-ws": "^5.0.2",
+    "nodemon": "^2.0.14",
+    "ts-node": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/express-ws": "^3.0.1",
+    "@types/node": "^16.11.1",
+    "@types/ws": "^8.2.0",
+    "typescript": "^4.4.4"
+  }
+}
