@@ -2,6 +2,7 @@
 
 import { Request, Response, NextFunction } from "express";
 import { signupValidation } from "../middleware/signup.validation";
+import { db } from "../../index";
 export class LoginController {
   public getLoggedIn = async (
     req: Request,
@@ -19,6 +20,13 @@ export class LoginController {
 
       console.log(req.body);
 
+      let sql: string =
+        "INSERT INTO users (username, email, password) VALUES ('Cardinal', 'test@gmail.com', '123456');";
+      db.query(sql, function (error, results, fields) {
+        if (error) throw error;
+        console.log("The solution is: ", results);
+        console.log("user Created!");
+      });
       res
         .status(200)
         .header({ "Access-Control-Allow-Origin": "*" })
