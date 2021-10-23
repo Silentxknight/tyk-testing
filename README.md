@@ -1,2 +1,0 @@
-# tyk-testing
-testing purpose

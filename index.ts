@@ -1,11 +1,15 @@
+import cors from "cors";
 import express from "express";
-import signup from "./routes/signupRoutes";
-import config from "./config/config";
-const app = express();
-const con = new config();
-app.use("/register", signup);
-// app.use("/login", loginRoutes);
+import { router } from "./src/routes/routes";
 
-app.listen(con.port, () => {
-  console.log(`app is running on port ${con.port}`);
-});
+const app = express();
+
+// Enable cors support to accept cross origin requests
+app.use(cors());
+
+app.use(express.json());
+app.use(express.urlencoded());
+// REST API entry point
+app.use("/entry", router);
+
+app.listen(5000, () => console.log("Server Running 5000"));
